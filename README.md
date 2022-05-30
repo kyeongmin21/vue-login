@@ -13,3 +13,9 @@
 * vuex 중앙집중식 저장소를 써야하는 이유 : <br>
   login 되었는지 안되었는지 확인 해야하는데 그때마다 loginSuccess 값을 전체에 넘겨줄 수 없으므로
 
+### store
+* state 안에는 
+  - Login.vue 파일안에 data에 있는 allUsers 값 가져오기
+  - isLogin, isLoginError false 로 정하기
+* mutations 안에는
+  - 로그인 성공 or 실패 : 2개의 경우를 만들어 준다.

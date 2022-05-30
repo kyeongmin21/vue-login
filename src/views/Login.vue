@@ -41,10 +41,6 @@ export default {
     return {
       email: null,
       password: null,
-      allUsers: [
-        { id: 1, name: 'min', email: 'min@naver.com', password: '1234' },
-        { id: 2, name: 'jin', email: 'jin@naver.com', password: '1234' }
-      ],
       isError: false,
       loginSuccess: false
     }
