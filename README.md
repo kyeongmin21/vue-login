@@ -13,15 +13,20 @@
 * vuex 중앙집중식 저장소를 써야하는 이유 : <br>
   login 되었는지 안되었는지 확인 해야하는데 그때마다 loginSuccess 값을 전체에 넘겨줄 수 없으므로
 
-### store
+### store.js
 * state 
   - Login.vue 파일안에 data에 있는 allUsers 값 가져오기
   - isLogin, isLoginError false 로 default 
 * mutations
   - 로그인 성공 or 실패 : 2개의 경우를 만들어 준다.
 * actions 
-  - Login.vue 에서 login() methods 를 지운다.
+  - Login.vue 에서 login() methods 를 지우고, store.js에서 actions에 넣어준다.
+  - Login.vue 에서 가져온 코드에서, allUsers 앞에 this 를 지워주고 state로 변경한다.
+  - this.email 이 아니라 loginObj(payload)를 받아서 써야하므로 loginObj.email 로 변경
+    
+### Login.vue
   - store.js 의 actions 에서 login() 을 쓰기위해 우리는 import 를 해야한다.
-  - import / methods 안에 ...mapActions(['login']) 으로 쓰겠다고 선언한다! 
+  - import 하기 / methods 안에 ...mapActions(['login']) 으로 쓰겠다고 선언하기
   - @click="login({ email, password })"  email, password 는 payload 이다.
+
 

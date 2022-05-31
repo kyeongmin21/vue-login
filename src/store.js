@@ -27,8 +27,22 @@ export default new Vuex.Store({
   },
   actions: {
     // 로그인 시도, state 는 DB 역할
-    login ({ state, commit }, signObj) {
-      console.log(signObj)
+    login ({ state, commit }, loginObj) {
+      // 전체 유저에서 해당 이메일로 유저를 찾는다
+      let selectedUser = null
+      state.allUsers.forEach( user => {
+        if (user.email ===  loginObj.email) {
+          selectedUser = user
+        }
+      })
+
+      if (selectedUser === null) this.isError = true
+      else {
+        // 그 유저의 비밀번호와 입력된 비밀번호를 비교한다
+        selectedUser.password !== this.password
+        ? this.isError = true
+        : this.loginSuccess = true
+      }
     }
   }
 })

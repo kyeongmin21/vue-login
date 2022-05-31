@@ -50,24 +50,6 @@ export default {
   methods: {
     // store 에 있는 login actions 를 methods 처럼 쓸 수 있게 만듬.
     ...mapActions(['login']),
-    // login () {
-      // 전체 유저에서 해당 이메일로 유저를 찾는다
-      // let selectedUser = null
-      // this.allUsers.forEach( user => {
-      //   if (user.email ===  this.email) {
-      //     selectedUser = user
-      //   }
-      // })
-      //
-      // if (selectedUser === null) this.isError = true
-      // else {
-      //   selectedUser.password !== this.password
-      //   ? this.isError = true
-      //   : this.loginSuccess = true
-      // }
-      // 그 유저의 비밀번호와 입력된 비밀번호를 비교한다
-      // console.log(this.email, this.password)
-    // }
   }
 }
 
