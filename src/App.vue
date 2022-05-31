@@ -14,6 +14,7 @@
             <v-list-tile-title>Home</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
+
         <v-list-tile router :to="{name: 'login'}" exact>
           <v-list-tile-action>
             <v-icon>person</v-icon>
@@ -22,6 +23,7 @@
             <v-list-tile-title>Login</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
+
       </v-list>
     </v-navigation-drawer>
     <v-toolbar color="indigo" dark fixed app>

@@ -26,6 +26,9 @@ export default new Vuex.Store({
     }
   },
   actions: {
-
+    // 로그인 시도, state 는 DB 역할
+    login ({ state, commit }, signObj) {
+      console.log(signObj)
+    }
   }
 })
