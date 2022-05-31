@@ -1,10 +1,7 @@
 <template>
   <v-app id="inspire">
-    <v-navigation-drawer
-      v-model="drawer"
-      fixed
-      app
-    >
+
+    <v-navigation-drawer v-model="drawer" fixed app>
       <v-list dense>
         <v-list-tile router :to="{name: 'home'}" exact>
           <v-list-tile-action>
@@ -23,13 +20,20 @@
             <v-list-tile-title>Login</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-
       </v-list>
     </v-navigation-drawer>
+
     <v-toolbar color="indigo" dark fixed app>
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title>Application</v-toolbar-title>
+
+      <v-spacer></v-spacer>
+      <v-toolbar-items class="hidden-sm-and-down" >
+        <v-btn flat v-if="this.isLogin">LogOut</v-btn>
+        <v-btn flat v-else router :to="{ name: 'login' }">Login</v-btn>
+      </v-toolbar-items>
     </v-toolbar>
+
     <v-content>
       <router-view/>
     </v-content>
@@ -38,12 +42,17 @@
 </template>
 
 <script>
-  export default {
-    data: () => ({
-      drawer: null
-    }),
-    props: {
-      source: String
-    }
+import { mapState } from 'vuex'
+
+export default {
+  data: () => ({
+    drawer: null
+  }),
+  computed: {
+    ...mapState(["isLogin"])
+  },
+  props: {
+    source: String
   }
+}
 </script>

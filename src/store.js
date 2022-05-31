@@ -31,17 +31,15 @@ export default new Vuex.Store({
       // 전체 유저에서 해당 이메일로 유저를 찾는다
       let selectedUser = null
       state.allUsers.forEach( user => {
-        if (user.email ===  loginObj.email) {
-          selectedUser = user
-        }
+        if (user.email ===  loginObj.email) selectedUser = user
       })
 
       if (selectedUser === null) commit('loginError')
       else {
         // 그 유저의 비밀번호와 입력된 비밀번호를 비교한다
-        selectedUser.password !== this.password
+        selectedUser.password !== loginObj.password
         ? commit('loginError')
-        : this.loginSuccess = true
+        : commit('loginSuccess')
       }
     }
   }

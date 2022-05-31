@@ -3,8 +3,8 @@
     <v-layout row wrap align-center>
       <v-flex xs12>
 
-        <v-alert class="mb-3" :value="isError" type="error">아이디와 이메일을 확인해주세요.</v-alert>
-        <v-alert class="mb-3" :value="loginSuccess" type="success">로그인이 완료되었습니다.</v-alert>
+        <v-alert class="mb-3" :value="isLoginError" type="error">아이디와 이메일을 확인해주세요.</v-alert>
+        <v-alert class="mb-3" :value="isLogin" type="success">로그인이 완료되었습니다.</v-alert>
 
         <v-card >
           <v-toolbar flat>
@@ -26,9 +26,9 @@
                    color="primary"
                    @click="login({ email, password })">로그인
             </v-btn>
-
           </div>
         </v-card>
+
       </v-flex>
     </v-layout>
   </v-container>
@@ -42,14 +42,15 @@ export default {
   data() {
     return {
       email: null,
-      password: null,
-      isError: false,
-      loginSuccess: false
+      password: null
     }
+  },
+  computed: {
+    ...mapState(["isLogin", "isLoginError"])
   },
   methods: {
     // store 에 있는 login actions 를 methods 처럼 쓸 수 있게 만듬.
-    ...mapActions(['login']),
+    ...mapActions(["login"])
   }
 }
 

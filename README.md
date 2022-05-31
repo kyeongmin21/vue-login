@@ -32,5 +32,8 @@
   - @click="login({ email, password })"  email, password 는 payload 이다.
   - isError, loginSuccess 는 store 에서 isLogin, isLoginError 로 쓰므로 삭제
 
+### Login 되었는지 알려주기
+ - 성공하면 header 에 LogOut
+ - 실패하면 header 에 Login
 
 
