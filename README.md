@@ -30,5 +30,7 @@
   - store.js 의 actions 에서 login() 을 쓰기위해 우리는 import 를 해야한다.
   - import 하기 / methods 안에 ...mapActions(['login']) 으로 쓰겠다고 선언하기
   - @click="login({ email, password })"  email, password 는 payload 이다.
+  - isError, loginSuccess 는 store 에서 isLogin, isLoginError 로 쓰므로 삭제
+
 
 
