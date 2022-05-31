@@ -36,11 +36,11 @@ export default new Vuex.Store({
         }
       })
 
-      if (selectedUser === null) this.isError = true
+      if (selectedUser === null) commit('loginError')
       else {
         // 그 유저의 비밀번호와 입력된 비밀번호를 비교한다
         selectedUser.password !== this.password
-        ? this.isError = true
+        ? commit('loginError')
         : this.loginSuccess = true
       }
     }

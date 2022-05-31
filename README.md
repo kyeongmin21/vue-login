@@ -23,7 +23,9 @@
   - Login.vue 에서 login() methods 를 지우고, store.js에서 actions에 넣어준다.
   - Login.vue 에서 가져온 코드에서, allUsers 앞에 this 를 지워주고 state로 변경한다.
   - this.email 이 아니라 loginObj(payload)를 받아서 써야하므로 loginObj.email 로 변경
-    
+  - this.isError 를 => commit('loginError')
+  - this.loginSuccess = true 를 => commit('loginSuccess')
+
 ### Login.vue
   - store.js 의 actions 에서 login() 을 쓰기위해 우리는 import 를 해야한다.
   - import 하기 / methods 안에 ...mapActions(['login']) 으로 쓰겠다고 선언하기
