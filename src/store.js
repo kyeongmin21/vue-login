@@ -34,13 +34,9 @@ export default new Vuex.Store({
         if (user.email ===  loginObj.email) selectedUser = user
       })
 
-      if (selectedUser === null) commit('loginError')
-      else {
-        // 그 유저의 비밀번호와 입력된 비밀번호를 비교한다
-        selectedUser.password !== loginObj.password
+      selectedUser === null || selectedUser.password !== loginObj.password
         ? commit('loginError')
         : commit('loginSuccess')
-      }
     }
   }
 })
