@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import router from './router'
 
 Vue.use(Vuex)
 
@@ -34,9 +35,12 @@ export default new Vuex.Store({
         if (user.email ===  loginObj.email) selectedUser = user
       })
 
-      selectedUser === null || selectedUser.password !== loginObj.password
-        ? commit('loginError')
-        : commit('loginSuccess')
+      if (selectedUser === null || selectedUser.password !== loginObj.password) {
+        commit('loginError')
+      } else {
+        commit('loginSuccess')
+        router.push({ name: "mypage" })
+      }
     }
   }
 })
