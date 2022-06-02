@@ -17,7 +17,7 @@ const onlyAuthUser = (to, from, next) => {
   if (store.state.isLogin === false) {
     // 아직 로그인된 유저니까 마이페이지 접속을 막아야한다.
     alert('로그인이 필요합니다.')
-    next("/")
+    next("/login")
   } else {
     next()
   }

@@ -60,6 +60,10 @@
 
 ### onlyAuthUser 마이페이지
  - 마이페이지 접속할 때 로그인 했는지 안했는지 판단
- - 로그인되어 있으면 접속가능, 안되어 있으면 home으로
+ - 로그인되어 있으면 접속가능, 안되어 있으면 login 으로
  - mypage 라우터에서, beforeEnter 만들어서 onlyAuthUser 로 설정하기
 
+
+### login, mypage 하나만 보여지게 하기
+ - 로그인 되어 있으면 : 로그인 안보여짐, mypage 보여짐
+ - 로그인 안되어 있으면 : 로그인 보여짐, mypage 안보여짐

@@ -12,7 +12,7 @@
           </v-list-tile-content>
         </v-list-tile>
 
-        <v-list-tile router :to="{name: 'login'}" exact>
+        <v-list-tile v-if="this.isLogin === false" router :to="{name: 'login'}" exact>
           <v-list-tile-action>
             <v-icon>person</v-icon>
           </v-list-tile-action>
@@ -21,7 +21,7 @@
           </v-list-tile-content>
         </v-list-tile>
 
-        <v-list-tile router :to="{name: 'mypage'}" exact>
+        <v-list-tile v-else router :to="{name: 'mypage'}" exact>
           <v-list-tile-action>
             <v-icon>person</v-icon>
           </v-list-tile-action>
