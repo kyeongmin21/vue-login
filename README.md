@@ -58,3 +58,8 @@
   store.state.isLogin 로 true, false 값을 전달 받아야한다.
  - login 라우터에서, beforeEnter 만들어서 rejectAuthUser 로 설정하기
 
+### onlyAuthUser 마이페이지
+ - 마이페이지 접속할 때 로그인 했는지 안했는지 판단
+ - 로그인되어 있으면 접속가능, 안되어 있으면 home으로
+ - mypage 라우터에서, beforeEnter 만들어서 onlyAuthUser 로 설정하기
+
