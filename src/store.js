@@ -38,9 +38,9 @@ export default new Vuex.Store({
       })
 
       if (selectedUser === null || selectedUser.password !== loginObj.password) {
-        commit('loginError')
+        commit("loginError")
       } else {
-        commit('loginSuccess', selectedUser)
+        commit("loginSuccess", selectedUser)
         router.push({ name: "mypage" })
       }
     }

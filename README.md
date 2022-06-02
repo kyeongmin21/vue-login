@@ -42,3 +42,10 @@
  - 3. mutations : loginSuccess(state, payload) 의 payload 에 담기고,
  - 4. mutations : state.userInfo = payload 에 다시 담겨서,
  - 5. state : userInfo = { id: 1, ~} 가 바인딩 된다.
+ - 6. 그래서 실제 DB 에는 userInfo: {id: 1, name: 'min', ~~} 값이 전달된다.
+  
+
+### Mypage
+ -  userInfo 를 받아 받아오기 ...mapState로!
+ - 로그인이 성공하면 Mypage.vue 파일로 넘어가게 된다!
+
