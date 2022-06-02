@@ -36,4 +36,9 @@
  - 성공하면 header 에 LogOut
  - 실패하면 header 에 Login
 
-
+### userInfo 순서
+ - 1. state : allUsers 의 { id: 1, ~~ } 객체가
+ - 2. actions : commit('loginSuccess', selectedUser) 의 selectedUser 로 넘어오고
+ - 3. mutations : loginSuccess(state, payload) 의 payload 에 담기고,
+ - 4. mutations : state.userInfo = payload 에 다시 담겨서,
+ - 5. state : userInfo = { id: 1, ~} 가 바인딩 된다.
