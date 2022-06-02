@@ -49,3 +49,12 @@
  -  userInfo 를 받아 받아오기 ...mapState로!
  - 로그인이 성공하면 Mypage.vue 파일로 넘어가게 된다!
 
+
+### reject 시키기
+ - 로그인 페이지에 들어갈 때 로그인 했는지 안했는지 판단하기
+ - router.js 에서 const rejectAuthUser 변수를 만드는데, <br>
+   로그인 되었으면 / home 경로로, 안되었으면 next() 경로로 설정
+ - isLogin 되었는지 알기 위해서는 import store 시켜서 <br>
+  store.state.isLogin 로 true, false 값을 전달 받아야한다.
+ - login 라우터에서, beforeEnter 만들어서 rejectAuthUser 로 설정하기
+
