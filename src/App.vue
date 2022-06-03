@@ -37,18 +37,22 @@
       <v-toolbar-title>Application</v-toolbar-title>
 
       <v-spacer></v-spacer>
-      <v-toolbar-items class="hidden-sm-and-down" >
-     <v-menu offset-y v-if="this.isLogin">
-       <v-btn slot="activator" color="primary" dark>DropDown</v-btn>
-       <v-list>
-         <v-list-tile>
-           <v-list-tile-title>마이페이지</v-list-tile-title>
-         </v-list-tile>
-         <v-list-tile>
-           <v-list-tile-title>로그아웃</v-list-tile-title>
-         </v-list-tile>
-       </v-list>
-     </v-menu>
+
+      <v-toolbar-items class="hidden-sm-and-down">
+        <v-menu offset-y v-if="this.isLogin">
+          <v-btn slot="activator" flat dark icon >
+            <v-icon>more_vert</v-icon>
+
+          </v-btn>
+          <v-list>
+            <v-list-tile>
+              <v-list-tile-title>마이페이지</v-list-tile-title>
+            </v-list-tile>
+            <v-list-tile>
+              <v-list-tile-title>로그아웃</v-list-tile-title>
+            </v-list-tile>
+          </v-list>
+        </v-menu>
 
         <v-btn flat v-else router :to="{ name: 'login' }">Login</v-btn>
       </v-toolbar-items>
@@ -62,7 +66,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import {mapState} from 'vuex'
 
 export default {
   data: () => ({
