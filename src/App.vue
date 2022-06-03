@@ -46,7 +46,7 @@
           </v-btn>
           <v-list>
             <v-list-tile>
-              <v-list-tile-title>마이페이지</v-list-tile-title>
+              <v-list-tile-title router :to="{name: 'mypage'}">마이페이지</v-list-tile-title>
             </v-list-tile>
             <v-list-tile>
               <v-list-tile-title>로그아웃</v-list-tile-title>
