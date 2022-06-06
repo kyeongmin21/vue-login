@@ -14,6 +14,7 @@ export default new Vuex.Store({
     isLogin: false,
     isLoginError: false
   },
+  // mutations 는 state 값을 변화시키는 로직
   mutations: {
     // 로그인이 성공했을 때
     loginSuccess (state, payload) {
