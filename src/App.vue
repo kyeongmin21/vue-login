@@ -48,7 +48,7 @@
             <v-list-tile>
               <v-list-tile-title router :to="{name: 'mypage'}">마이페이지</v-list-tile-title>
             </v-list-tile>
-            <v-list-tile>
+            <v-list-tile @click="this.logout">
               <v-list-tile-title>로그아웃</v-list-tile-title>
             </v-list-tile>
           </v-list>
@@ -66,7 +66,7 @@
 </template>
 
 <script>
-import {mapState} from 'vuex'
+import { mapState, mapActions } from 'vuex'
 
 export default {
   data: () => ({
@@ -77,6 +77,9 @@ export default {
   },
   props: {
     source: String
+  },
+  methods: {
+    ...mapActions(['logout'])
   }
 }
 </script>
