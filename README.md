@@ -71,3 +71,5 @@
 
 ### logout 만들기
  - 로그아웃 : mutations 값 바꿔주고, 경로를 home 으로 바꿔주기
+ 
+ // https://www.youtube.com/watch?v=TSyS3hMaDfA&t=262s
